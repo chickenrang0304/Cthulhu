@@ -14,18 +14,24 @@ public class MonsterAppearanceController : MonoBehaviour
     [SerializeField] private float sanityDrainPerSecond = 1f;
 
     public bool IsShowingTrueForm { get; private set; }
+    private bool isTabPressed = false;
 
     private void Update()
     {
-        bool holdingTab = Keyboard.current.tabKey.isPressed;
-
-        if (holdingTab)
+        bool PressedTab = Keyboard.current.tabKey.wasPressedThisFrame;
+        
+        if (PressedTab)
         {
-            SetTrueForm();
+            setIsTabPrassed();
         }
-        else if (!holdingTab)
+
+        if (!isTabPressed)
         {
             SetNormalForm();
+        }
+        else
+        {
+            SetTrueForm();
         }
 
     }
@@ -41,5 +47,11 @@ public class MonsterAppearanceController : MonoBehaviour
     private void SetNormalForm()
     {
         spriteRenderer.sprite = normalForm;
+    }
+
+    private bool setIsTabPrassed()
+    {
+        isTabPressed = !isTabPressed;
+        return isTabPressed;
     }
 }
