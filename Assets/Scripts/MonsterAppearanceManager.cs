@@ -13,7 +13,7 @@ public class MonsterAppearanceController : MonoBehaviour
     [SerializeField] private SanityManager sanityManager; // 씬에 있는 SanityManager 오브젝트 드래그
     [SerializeField] private float sanityDrainPerSecond = 1f;
 
-    public bool IsShowingTrueForm { get; private set; }
+    public FilterOnOffUI FilterUI;
     private bool isTabPressed = false;
 
     private void Update()
@@ -28,10 +28,13 @@ public class MonsterAppearanceController : MonoBehaviour
         if (!isTabPressed)
         {
             SetNormalForm();
+            FilterUI.SetOnOff(false);
+
         }
         else
         {
             SetTrueForm();
+            FilterUI.SetOnOff(true);
         }
 
     }

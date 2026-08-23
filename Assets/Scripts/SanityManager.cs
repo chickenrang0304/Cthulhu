@@ -11,7 +11,10 @@ public class SanityManager : MonoBehaviour
     {
         currentSanity = maxSanity;
     }
-
+    private void Start()
+    {
+        SanBarman.Applyvalue(currentSanity, maxSanity);
+    }
     public void DrainSanity(float amount)
     {
         currentSanity -= amount;
