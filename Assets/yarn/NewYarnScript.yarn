@@ -43,7 +43,7 @@ NPC: 간단한 문제입니다. 1+1은 무엇일까요?
 
 title: FilterTest
 ---
-크틀루: 내가 이쁘니?
+크틀루: 내가 이쁘니? #raw:내_*외형*을_~칭찬~해
 -> 이쁘네 #raw:ㄱㄱ_그런거_같습니다
     <<if $filterOn>>
         NPC: 다행이네요.
@@ -58,4 +58,19 @@ title: FilterTest
         NPC: 크틀루가 촉수를 꿈틀거린다.
         <<set $persuasion = $persuasion - 5>>
     <<endif>>
+NPC: 이야기 좀만 더 하죠! 문제를 푸셔야합니다!
+나: 문제요? 어떤 문제요?
+NPC: 간단한 문제입니다. 1+1은 무엇일까요?
+-> 2 #correct
+     <<add_persuasion PersuadeGauge 15>>
+      NPC: 정답입니다! 축하드립니다!
+      나: 감사합니다! 그럼 이제 가도 되겠죠?
+      NPC: 물론이죠! 다음에 또 봐요.
+-> 3
+      NPC: 틀렸네요 머저리인가요?
+-> 창문 #correct
+      NPC: 유-머러스하시네요
+-> 5
+      NPC: 틀렸네요 바보인가요?
+
 ===

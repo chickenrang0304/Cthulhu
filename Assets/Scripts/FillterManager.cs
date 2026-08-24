@@ -42,5 +42,10 @@ public class FilterManager : MonoBehaviour
         {
             tracker.RefreshText(FilterOn);
         }
+
+        if (FilterableLastLine.Instance != null)
+        {
+            FilterableLastLine.Instance.RefreshText(FilterOn);
+        }
     }
 }

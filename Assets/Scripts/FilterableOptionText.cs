@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using Yarn.Unity;
 
@@ -8,7 +9,14 @@ public class FilterableOptionText : MonoBehaviour
 {
     public static List<FilterableOptionText> ActiveTrackers = new List<FilterableOptionText>();
 
-    [SerializeField] private TextMeshProUGUI text; // 이건 프리팹 안의 자기 자식이라 그대로 인스펙터 연결 가능
+    [SerializeField] private TextMeshProUGUI text;
+
+    [Header("Colors")]
+    [SerializeField] private string rawColorHex = "#4A7C3F";   // 필터 꺼졌을 때 기본 색
+    [SerializeField] private string redColorHex = "#FF0000";    // *텍스트*
+    [SerializeField] private string yellowColorHex = "#FFFF00"; // ~텍스트~
+    [SerializeField] private string pinkColorHex = "#FF69B4";   // +텍스트+
+    [SerializeField] private string indigoColorHex = "#4B0082"; // =텍스트=
 
     private OptionItem optionItem;
     private string filteredText;
@@ -60,7 +68,6 @@ public class FilterableOptionText : MonoBehaviour
 
             initialized = true;
 
-            // FilterManager.Instance로 직접 접근 (인스펙터 연결 필요 없음)
             bool currentFilterState = FilterManager.Instance != null ? FilterManager.Instance.FilterOn : true;
             RefreshText(currentFilterState);
         }
@@ -73,6 +80,32 @@ public class FilterableOptionText : MonoBehaviour
     public void RefreshText(bool filterOn)
     {
         if (!initialized || text == null) return;
-        text.text = filterOn ? filteredText : rawText;
+
+        if (filterOn)
+        {
+            text.text = filteredText;
+        }
+        else
+        {
+            text.text = $"<color={rawColorHex}>{ProcessColorMarkers(rawText)}</color>";
+        }
+    }
+
+    private string ProcessColorMarkers(string input)
+    {
+        input = ReplaceMarker(input, @"\*", redColorHex);
+        input = ReplaceMarker(input, @"~", yellowColorHex);
+        input = ReplaceMarker(input, @"\+", pinkColorHex);
+        input = ReplaceMarker(input, @"=", indigoColorHex);
+        return input;
+    }
+
+    private string ReplaceMarker(string input, string escapedMarker, string colorHex)
+    {
+        return Regex.Replace(
+            input,
+            $@"{escapedMarker}(.+?){escapedMarker}",
+            $"<color={colorHex}>$1</color><color={rawColorHex}>"
+        );
     }
 }
