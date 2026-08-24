@@ -6,6 +6,7 @@ public class SanityManager : MonoBehaviour
     private float currentSanity;
 
     public SanityBarUIManager SanBarman;
+    public CharProfileChanger ProfileChanger; // 추가
 
     private void Awake()
     {
@@ -14,11 +15,13 @@ public class SanityManager : MonoBehaviour
     private void Start()
     {
         SanBarman.Applyvalue(currentSanity, maxSanity);
+        ProfileChanger.UpdateProfile(currentSanity, maxSanity); // 추가
     }
     public void DrainSanity(float amount)
     {
         currentSanity -= amount;
         Debug.Log("Current Sanity: " + currentSanity);
         SanBarman.Applyvalue(currentSanity, maxSanity);
+        ProfileChanger.UpdateProfile(currentSanity, maxSanity); // 추가
     }
 }

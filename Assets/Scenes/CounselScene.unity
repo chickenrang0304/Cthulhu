@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 596851498}
   - component: {fileID: 596851500}
   - component: {fileID: 596851499}
+  - component: {fileID: 596851501}
   m_Layer: 5
   m_Name: CharIcon
   m_TagString: Untagged
@@ -594,15 +595,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -619,6 +620,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596851497}
   m_CullTransparentMesh: 1
+--- !u!114 &596851501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596851497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179cfa0d3d042e14cb7321b6cc43aded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharProfileChanger
+  sprite1: {fileID: -4962753920104690605, guid: 7377d139f81b7cc4185451f8ee8c77e5, type: 3}
+  sprite2: {fileID: -6674230154343439400, guid: 5788a996d72d8bf4a90158a77e1c5f58, type: 3}
+  sprite3: {fileID: 6329628526424105253, guid: 9b2388d6cde63cb47b13c30413f8869f, type: 3}
+  profileImage: {fileID: 596851499}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SanityManager
   maxSanity: 100
   SanBarman: {fileID: 2040094339}
+  ProfileChanger: {fileID: 596851501}
 --- !u!4 &703122935
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,7 +1948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -9.5, y: -10}
   m_SizeDelta: {x: 300, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1024580466
@@ -1967,14 +1985,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew
-    TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew
-    TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew
-    TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew
-    TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew Text
+  m_text: "\uD234\uB8E8\n\uB098\uC774 1\uB9CC\uCA1C\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87c516507a6d3e7499c4e50b9ee7e340, type: 2}
+  m_sharedMaterial: {fileID: 3404636727526934181, guid: 87c516507a6d3e7499c4e50b9ee7e340, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2005,7 +2019,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2062,7 +2076,7 @@ GameObject:
   - component: {fileID: 1048734538}
   - component: {fileID: 1048734541}
   - component: {fileID: 1048734540}
-  - component: {fileID: 1048734539}
+  - component: {fileID: 1048734542}
   m_Layer: 5
   m_Name: PersuadeGauge
   m_TagString: Untagged
@@ -2090,20 +2104,6 @@ RectTransform:
   m_AnchoredPosition: {x: -225, y: 500}
   m_SizeDelta: {x: 50, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1048734539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048734537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc054868c118d7f4da760e27b5ab8d42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SanityBarUIManager
-  HPBar: {fileID: 1048734537}
-  currentHPBar: {fileID: 762672814}
 --- !u!114 &1048734540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2142,6 +2142,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048734537}
   m_CullTransparentMesh: 1
+--- !u!114 &1048734542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048734537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccdba217a1ee3e45af5518f9e1762e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PersuasionManager
+  dialogueRunner: {fileID: 1288902012}
+  minValue: 0
+  maxValue: 100
+  persuasionBar: {fileID: 1048734537}
+  currentPersuasionBar: {fileID: 762672814}
+  animationDuration: 0.5
 --- !u!1 &1119399230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,6 +2325,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159823802}
   m_CullTransparentMesh: 1
+--- !u!114 &1288902012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 772442691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1299180390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,9 +2923,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
-    m_Left: 0
+    m_Left: -20
     m_Right: 0
-    m_Top: 0
+    m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 0
@@ -2989,8 +3018,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 825467708}
   m_HandleRect: {fileID: 825467707}
   m_Direction: 2
-  m_Value: 1.0000005
-  m_Size: 0.4885175
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3066,7 +3095,7 @@ MonoBehaviour:
   normalForm: {fileID: 5097231359837370046, guid: 8f6c0401213aee8479a8c4c4db85a481, type: 3}
   trueForm: {fileID: -4198444382127372681, guid: fbcaafef4e88bb94483d076e24adfbe9, type: 3}
   sanityManager: {fileID: 703122934}
-  sanityDrainPerSecond: 1
+  sanityDrainPerSecond: 5
   FilterUI: {fileID: 872063175}
 --- !u!4 &1935693110
 Transform:
@@ -3149,7 +3178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.51090574, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
