@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2280859339551349582}
   - component: {fileID: 2325088147860188535}
   - component: {fileID: 3047204818688510317}
+  - component: {fileID: 3789044626319624163}
+  - component: {fileID: 3954683180893213054}
   m_Layer: 5
   m_Name: Option Item2
   m_TagString: Untagged
@@ -153,6 +155,32 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &3789044626319624163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861136279855345651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3623a634a1b8b498ac77822992525d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CorrectAnswerTracker
+--- !u!114 &3954683180893213054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861136279855345651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7a587eb7f9aee478836f5fc3abb115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FilterableOptionText
+  text: {fileID: 5406185868760822272}
+  filterManager: {fileID: 0}
 --- !u!1 &3342218716897838554
 GameObject:
   m_ObjectHideFlags: 0

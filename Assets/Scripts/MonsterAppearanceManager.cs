@@ -1,42 +1,46 @@
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 // (SpriteRenderer가 있는 오브젝트, 혹은 그 자식 비주얼 오브젝트)
 public class MonsterAppearanceController : MonoBehaviour
 {
     [Header("비주얼")]
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite normalForm;   // 모에화 버전
-    [SerializeField] private Sprite trueForm;     // 본모습 버전
+    [SerializeField] private Sprite normalForm;   // 모에화 버전 (필터 On)
+    [SerializeField] private Sprite trueForm;     // 본모습 버전 (필터 Off)
 
     [Header("SAN 연동")]
-    [SerializeField] private SanityManager sanityManager; // 씬에 있는 SanityManager 오브젝트 드래그
+    [SerializeField] private SanityManager sanityManager;
     [SerializeField] private float sanityDrainPerSecond = 1f;
 
     public FilterOnOffUI FilterUI;
-    private bool isTabPressed = false;
 
     private void Update()
     {
-        bool PressedTab = Keyboard.current.tabKey.wasPressedThisFrame;
-        
-        if (PressedTab)
+        if (FilterManager.Instance == null)
         {
-            setIsTabPrassed();
+            return; // FilterManager가 아직 씬에 없으면 아무것도 안 함
         }
 
-        if (!isTabPressed)
+        bool pressedTab = Keyboard.current.tabKey.wasPressedThisFrame;
+
+        if (pressedTab)
+        {
+            FilterManager.Instance.ToggleFilter();
+        }
+
+        bool filterOn = FilterManager.Instance.FilterOn;
+
+        if (filterOn)
         {
             SetNormalForm();
-            FilterUI.SetOnOff(false);
-
         }
         else
         {
             SetTrueForm();
-            FilterUI.SetOnOff(true);
         }
 
+        FilterUI.SetOnOff(filterOn);
     }
 
     private void SetTrueForm()
@@ -50,11 +54,5 @@ public class MonsterAppearanceController : MonoBehaviour
     private void SetNormalForm()
     {
         spriteRenderer.sprite = normalForm;
-    }
-
-    private bool setIsTabPrassed()
-    {
-        isTabPressed = !isTabPressed;
-        return isTabPressed;
     }
 }
