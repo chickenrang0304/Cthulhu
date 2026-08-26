@@ -1624,6 +1624,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8020628925184811237, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020628925184811237, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020628925184811237, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020628925673895293, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2399,7 +2411,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD234\uB8E8\n\uB098\uC774 1\uB9CC\uCA1C\n"
+  m_text: "\uD06C\uD22C \uC591\n\uB098\uC774 : \uBBF8\uD655\uC778\n\uC131\uBCC4 :
+    \uBBF8\uD655\uC778\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87c516507a6d3e7499c4e50b9ee7e340, type: 2}
   m_sharedMaterial: {fileID: 3404636727526934181, guid: 87c516507a6d3e7499c4e50b9ee7e340, type: 2}
@@ -3492,7 +3505,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645843337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4397,7 +4410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133575720}
   m_Layer: 0
-  m_Name: "\uD06C\uD234\uB8E8 \uCA29"
+  m_Name: "\uD06C\uD22C \uC591"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
