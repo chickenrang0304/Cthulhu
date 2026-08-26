@@ -46,6 +46,8 @@ title: FilterTest
 크틀루: 내가 이쁘니? #raw:내_*외형*을_~칭찬~해
 -> 이쁘네 #raw:ㄱㄱ_그런거_같습니다
     <<if $filterOn>>
+	<<expression happy>>
+	<<add_persuasion PersuadeGauge 15>>
         NPC: 다행이네요.
     <<else>>
         NPC: 크틀루의 진짜 표정이 스쳐 지나간다... 소름이 돋는다.

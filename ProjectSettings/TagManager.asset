@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: cthu
+    uniqueID: 3419641491
+    locked: 0
+  - name: UI
+    uniqueID: 3206627219
+    locked: 0
   - name: mainText
     uniqueID: 3114169731
     locked: 0
