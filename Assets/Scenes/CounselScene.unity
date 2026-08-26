@@ -145,9 +145,9 @@ Transform:
   m_GameObject: {fileID: 2868331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 35.02}
-  m_LocalScale: {x: 0.6483, y: 0.6483, z: 0.6483}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.6, z: 35.02}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2133575720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5097231359837370046, guid: 8f6c0401213aee8479a8c4c4db85a481, type: 3}
+  m_Sprite: {fileID: 3280675819711922992, guid: ea9577427f042b240955bd924a7f0513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645843337}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3778,8 +3778,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterAppearanceController
   spriteRenderer: {fileID: 2868333}
-  normalForm: {fileID: 5097231359837370046, guid: 8f6c0401213aee8479a8c4c4db85a481, type: 3}
-  trueForm: {fileID: -4198444382127372681, guid: fbcaafef4e88bb94483d076e24adfbe9, type: 3}
+  normalForm: {fileID: 3280675819711922992, guid: ea9577427f042b240955bd924a7f0513, type: 3}
+  trueForm: {fileID: 4014011561073958460, guid: 43cd39fd1b3ac594d977b3918fb50fc5, type: 3}
   sanityManager: {fileID: 703122934}
   sanityDrainPerSecond: 5
   FilterUI: {fileID: 872063175}

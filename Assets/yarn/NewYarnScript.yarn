@@ -18,8 +18,6 @@ NPC: 오, 반가워요! 선택지를 골라보실래요?
            <<jump Goodbye>>
 -> 아니요, 바빠요.
       NPC: 아, 알겠습니다. 그럼 다음에 뵙겠습니다!
-      설득도 +5 #system
-
 ===
 
 title: Goodbye
