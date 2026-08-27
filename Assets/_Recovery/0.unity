@@ -338,7 +338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &137608837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -371,8 +371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1124,7 +1124,6 @@ MonoBehaviour:
   SanBarman: {fileID: 2040094339}
   ProfileChanger: {fileID: 596851501}
   PanicEffect: {fileID: 1645843339}
-  badEndingSceneName: DefeatEndingScene
 --- !u!4 &703122935
 Transform:
   m_ObjectHideFlags: 0
@@ -1567,7 +1566,7 @@ PrefabInstance:
     - target: {fileID: 8020628925107869960, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: canvasGroup
       value: 
-      objectReference: {fileID: 1463153116}
+      objectReference: {fileID: 1434857392}
     - target: {fileID: 8020628925107869960, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: showsLastLine
       value: 1
@@ -1614,7 +1613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8020628925107869969, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_BlocksRaycasts
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8020628925184811234, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_IsActive
@@ -2081,6 +2080,7 @@ GameObject:
   - component: {fileID: 968511024}
   - component: {fileID: 968511028}
   - component: {fileID: 968511027}
+  - component: {fileID: 968511026}
   - component: {fileID: 968511025}
   m_Layer: 5
   m_Name: Item(coffe)
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460398987}
+      - m_Target: {fileID: 968511026}
         m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
         m_MethodName: UseCoffe
         m_Mode: 1
@@ -2164,6 +2164,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &968511026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968511023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85dd1ff918dd9347848907126a3ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrackerItem
+  sanityManager: {fileID: 703122934}
+  persuasionManager: {fileID: 0}
+  coffeeRestoreAmount: 20
+  cigaretteSanityRestoreAmount: 50
+  cigarettePersuasionCost: 15
 --- !u!114 &968511027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,6 +2593,7 @@ GameObject:
   - component: {fileID: 1053274457}
   - component: {fileID: 1053274461}
   - component: {fileID: 1053274460}
+  - component: {fileID: 1053274459}
   - component: {fileID: 1053274458}
   m_Layer: 5
   m_Name: Item(Tracker)
@@ -2647,8 +2665,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460398987}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
+      - m_Target: {fileID: 1053274459}
+        m_TargetAssemblyTypeName: TrackerItem, Assembly-CSharp
         m_MethodName: UseMagnifyingGlass
         m_Mode: 1
         m_Arguments:
@@ -2659,6 +2677,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1053274459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8891694498227015893, guid: fcd12a5e83a23c14eb9654a5a7b15970, type: 3}
+  m_PrefabInstance: {fileID: 7203699732528908181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053274456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85dd1ff918dd9347848907126a3ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrackerItem
+  sanityManager: {fileID: 0}
+  persuasionManager: {fileID: 0}
+  coffeeRestoreAmount: 20
+  cigaretteSanityRestoreAmount: 50
+  cigarettePersuasionCost: 15
 --- !u!114 &1053274460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2892,9 +2927,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FilterManager
   dialogueRunner: {fileID: 1288902012}
-  flashImage: {fileID: 137608838}
-  flashInDuration: 0.1
-  flashOutDuration: 0.3
 --- !u!4 &1253644781
 Transform:
   m_ObjectHideFlags: 0
@@ -3169,7 +3201,6 @@ GameObject:
   - component: {fileID: 1460398986}
   - component: {fileID: 1460398985}
   - component: {fileID: 1460398984}
-  - component: {fileID: 1460398987}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -3263,26 +3294,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460398982}
   m_CullTransparentMesh: 1
---- !u!114 &1460398987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460398982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85dd1ff918dd9347848907126a3ee8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemManager
-  sanityManager: {fileID: 703122934}
-  persuasionManager: {fileID: 1048734542}
-  coffeeRestoreAmount: 20
-  coffeeItemObject: {fileID: 968511023}
-  magnifyingGlassItemObject: {fileID: 1053274456}
-  cigaretteSanityRestoreAmount: 50
-  cigarettePersuasionCost: 15
-  cigaretteItemObject: {fileID: 1899214108}
 --- !u!1 &1463153111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8020628925107869965, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -3306,11 +3317,6 @@ MonoBehaviour:
   yellowColorHex: '#FFFF00'
   pinkColorHex: '#FF69B4'
   indigoColorHex: '#4B0082'
---- !u!225 &1463153116 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 8020628925107869969, guid: 52571f68872914e24837210513edea1d, type: 3}
-  m_PrefabInstance: {fileID: 772442691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507818439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,7 +3652,7 @@ GameObject:
   - component: {fileID: 1704144768}
   - component: {fileID: 1704144767}
   m_Layer: 0
-  m_Name: background
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3950,6 +3956,7 @@ GameObject:
   - component: {fileID: 1899214109}
   - component: {fileID: 1899214113}
   - component: {fileID: 1899214112}
+  - component: {fileID: 1899214111}
   - component: {fileID: 1899214110}
   m_Layer: 5
   m_Name: Item()
@@ -4021,7 +4028,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460398987}
+      - m_Target: {fileID: 1899214111}
         m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
         m_MethodName: UseCigarette
         m_Mode: 1
@@ -4033,6 +4040,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1899214111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4521058214852430392, guid: 540a3e6aa2636c640b05d6f90e0f409d, type: 3}
+  m_PrefabInstance: {fileID: 2462215396123245619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899214108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85dd1ff918dd9347848907126a3ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrackerItem
+  sanityManager: {fileID: 703122934}
+  persuasionManager: {fileID: 1048734542}
+  coffeeRestoreAmount: 20
+  cigaretteSanityRestoreAmount: 50
+  cigarettePersuasionCost: 15
 --- !u!114 &1899214112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,52 +4095,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899214108}
   m_CullTransparentMesh: 1
---- !u!1 &1935532017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1935532019}
-  - component: {fileID: 1935532018}
-  m_Layer: 0
-  m_Name: endingSceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1935532018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935532017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8c1064392cc32049a05f0b206eb7a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndingSceneChanger
-  goodEndingSceneName: GoodEndingScene
-  badEndingSceneName: DefeatScene
---- !u!4 &1935532019
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935532017}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.92643, y: -0.71739, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935693108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,8 +4539,7 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.78616345
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4578,14 +4555,6 @@ PrefabInstance:
     - target: {fileID: 90138982252024528, guid: fcd12a5e83a23c14eb9654a5a7b15970, type: 3}
       propertyPath: m_Name
       value: Item(Tracker)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1375544869995423145, guid: fcd12a5e83a23c14eb9654a5a7b15970, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UseMagnifyingGlass
-      objectReference: {fileID: 0}
-    - target: {fileID: 1375544869995423145, guid: fcd12a5e83a23c14eb9654a5a7b15970, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ItemManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7469168417635231892, guid: fcd12a5e83a23c14eb9654a5a7b15970, type: 3}
       propertyPath: m_Pivot.x
@@ -4667,8 +4636,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4686,4 +4654,3 @@ SceneRoots:
   - {fileID: 703122935}
   - {fileID: 1253644781}
   - {fileID: 1299180394}
-  - {fileID: 1935532019}
