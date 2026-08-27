@@ -7,7 +7,7 @@ public class EndingSceneChanger : MonoBehaviour
 {
     [Header("씬 이름")]
     [SerializeField] private string goodEndingSceneName = "GoodEndingScene";
-    [SerializeField] private string badEndingSceneName = "DefeatScene";
+    [SerializeField] private string badEndingSceneName = "BadEndingScene";
 
     // 얀 스크립트에서 <<good_ending>> 이라고 쓰면 이 함수가 호출된다.
     [YarnCommand("good_ending")]

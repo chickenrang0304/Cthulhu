@@ -59,5 +59,8 @@ TagManager:
   - name: square
     uniqueID: 2145589337
     locked: 0
+  - name: goodEnding
+    uniqueID: 100191945
+    locked: 0
   m_RenderingLayers:
   - Default

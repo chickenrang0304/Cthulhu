@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 
 public class SceneManager : MonoBehaviour
