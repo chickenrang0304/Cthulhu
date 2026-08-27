@@ -6,15 +6,15 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private PersuasionManager persuasionManager;
 
     [Header("커피")]
-    [SerializeField] private float coffeeRestoreAmount = 20f;
+    [SerializeField] private float coffeeRestoreAmount = 10f;
     [SerializeField] private GameObject coffeeItemObject; 
 
     [Header("돋보기")]
     [SerializeField] private GameObject magnifyingGlassItemObject;
 
     [Header("담배")]
-    [SerializeField] private float cigaretteSanityRestoreAmount = 50f;
-    [SerializeField] private float cigarettePersuasionCost = 15f;
+    [SerializeField] private float cigaretteSanityRestoreAmount = 15f;
+    [SerializeField] private float cigarettePersuasionCost = 5f;
     [SerializeField] private GameObject cigaretteItemObject;
 
     public void UseMagnifyingGlass()

@@ -44,11 +44,20 @@ TagManager:
   - name: cthu
     uniqueID: 3419641491
     locked: 0
+  - name: table
+    uniqueID: 1811223623
+    locked: 0
   - name: UI
     uniqueID: 3206627219
     locked: 0
   - name: mainText
     uniqueID: 3114169731
+    locked: 0
+  - name: title
+    uniqueID: 4269067703
+    locked: 0
+  - name: square
+    uniqueID: 2145589337
     locked: 0
   m_RenderingLayers:
   - Default
