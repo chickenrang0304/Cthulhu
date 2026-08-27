@@ -13,7 +13,7 @@ public class CharProfileChanger : MonoBehaviour
 
     [Header("Shake Settings")]
     [SerializeField] private float shakeThreshold = 0.33f; // 이 비율 이하일 때 떨림
-    [SerializeField] private float shakeAmount = 5f;        // 떨리는 정도(픽셀)
+    [SerializeField] private float shakeAmount = 5f;        // 떨리는 정도
     [SerializeField] private float shakeSpeed = 30f;        // 떨리는 속도
 
     private RectTransform rectTransform;

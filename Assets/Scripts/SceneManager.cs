@@ -19,4 +19,9 @@ public class SceneManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("CounselScene");
     }
+
+    public void ChangeBadEnding()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DefeatScene");
+    }
 }   
