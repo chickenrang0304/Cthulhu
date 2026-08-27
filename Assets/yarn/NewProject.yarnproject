@@ -2,7 +2,8 @@
   "projectFileVersion": 4,
   "sourceFiles": [
     "**/NewYarnScript.yarn",
-    "**/Goodbye.yarn"
+    "**/Goodbye.yarn",
+    "**/Seung_Interest.yarn"
   ],
   "excludeFiles": [
     "**/*~/*",
