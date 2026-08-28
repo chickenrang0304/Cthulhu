@@ -8,7 +8,7 @@ using TMPro;
 public class ButtonRevealer : MonoBehaviour
 {
     [Header("대상 오브젝트 (덮어써질 대상)")]
-    [SerializeField] private Image targetIconImage;       // 아이콘 역할을 하는 오브젝트
+    [SerializeField] private SpriteRenderer targetIconImage;       // 아이콘 역할을 하는 오브젝트
     [SerializeField] private TextMeshProUGUI targetText;   // 텍스트 역할을 하는 오브젝트
     [SerializeField] private Button targetButton;          // 버튼 역할을 하는 오브젝트
 
@@ -25,6 +25,7 @@ public class ButtonRevealer : MonoBehaviour
         if (targetIconImage != null)
         {
             targetIconImage.sprite = newIcon;
+            targetIconImage.color = enabledColor;
         }
 
         if (targetText != null)
