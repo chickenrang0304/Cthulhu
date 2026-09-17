@@ -9,12 +9,22 @@ public class CorrectAnswerTracker : MonoBehaviour
     public static List<CorrectAnswerTracker> ActiveTrackers = new List<CorrectAnswerTracker>();
 
     private OptionItem optionItem;
+    private Image backgroundImage;
+    private Color normalBackgroundColor;
+
+    [Header("Highlight")]
+    [SerializeField] private Color correctHighlightColor = new Color(0.32f, 0.27f, 0.08f, 0.96f);
     //[SerializeField] private Sprite image; // 67% 이상
 
 
     void Awake()
     {
         optionItem = GetComponent<OptionItem>();
+        backgroundImage = GetComponent<Image>();
+        if (backgroundImage != null)
+        {
+            normalBackgroundColor = backgroundImage.color;
+        }
     }
 
     void OnEnable()
@@ -49,7 +59,9 @@ public class CorrectAnswerTracker : MonoBehaviour
 
     public void SetHighlight(bool on)
     {
-        // 여기에 강조 효과 구현 (테두리 색, 반짝임 등)
-        GetComponent<Image>().color = on ? Color.yellow : Color.white;
+        if (backgroundImage == null) return;
+
+        // 강조가 끝난 뒤 흰색으로 덮지 않고 프리팹의 원래 어두운 색으로 되돌린다.
+        backgroundImage.color = on ? correctHighlightColor : normalBackgroundColor;
     }
 }

@@ -1157,7 +1157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 450, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &426126037
@@ -2034,6 +2034,12 @@ MonoBehaviour:
     \uBCF4\uBA70 \uC0DD\uAC01\uD55C\uB2E4.  \u201C\uC9C0\uB8E8\uD574. \uADF8\uB7FC
     \uC9C0\uAD6C\uB97C \uC5C6\uC560\uBCFC\uAE4C?\u201D"
   enabledColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.62, g: 0.86, b: 0.72, a: 1}
+  selectedOutlineColor: {r: 0.04, g: 0.28, b: 0.2, a: 1}
+  startButtonText: "\uC0C1\uB2F4 \uC2DC\uC791"
+  briefingText: "\uAD00\uCC30 \uAE30\uB85D\n- \uAC15\uD55C \uBB34\uB8CC\uD568\uC744
+    \uD638\uC18C\uD568\n- \uC778\uAC04 \uBB38\uD654\uC5D0 \uAD00\uC2EC\uC744 \uBCF4\uC784\n\n\uC8FC\uC758\uC0AC\uD56D\n\uC778\uC9C0\uD544\uD130
+    \uC7A5\uC2DC\uAC04 \uD574\uC81C \uAE08\uC9C0"
 --- !u!114 &792145409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,7 +2365,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 792145405}
   - {fileID: 1615279981}
@@ -3329,7 +3335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC704\uD5D8\uB3C4 : \uD558\n\uC0C1\uB2F4 \uBAA9\uC801 : \uD06C\uD22C
+  m_text: "\uC704\uD5D8\uB3C4 : \uD558\n\uC0C1\uB2F4 \uBAA9\uD45C : \uD06C\uD22C
     \uC591\uC5D0 \uC9C0\uB8E8\uD568\uC744 \uB35C\uC5B4\uC11C \uC9C0\uAD6C \uBA78\uB9DD\uC744
     \uB9C9\uC544\uB0B4\uC790!"
   m_isRightToLeft: 0

@@ -17,6 +17,33 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private float cigarettePersuasionCost = 5f;
     [SerializeField] private GameObject cigaretteItemObject;
 
+    private void Awake()
+    {
+        SetupItemTooltips();
+    }
+
+    private void SetupItemTooltips()
+    {
+        AddTooltip(coffeeItemObject, $"커피\n정신력 +{coffeeRestoreAmount:0}");
+        AddTooltip(magnifyingGlassItemObject, "돋보기\n정답 선택지를 표시합니다");
+        AddTooltip(
+            cigaretteItemObject,
+            $"담배\n정신력 +{cigaretteSanityRestoreAmount:0}\n설득도 -{cigarettePersuasionCost:0}");
+    }
+
+    private static void AddTooltip(GameObject itemObject, string description)
+    {
+        if (itemObject == null) return;
+
+        var tooltip = itemObject.GetComponent<ItemHoverTooltip>();
+        if (tooltip == null)
+        {
+            tooltip = itemObject.AddComponent<ItemHoverTooltip>();
+        }
+
+        tooltip.SetDescription(description);
+    }
+
     public void UseMagnifyingGlass()
     {
         // 이미 사용해서 비활성화된 상태라면 아무것도 하지 않고 즉시 종료

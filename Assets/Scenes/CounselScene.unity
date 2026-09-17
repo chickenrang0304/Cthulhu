@@ -4435,7 +4435,7 @@ GameObject:
   - component: {fileID: 1938155184}
   - component: {fileID: 1938155183}
   m_Layer: 0
-  m_Name: Cthu-chan_0
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
