@@ -55,16 +55,7 @@ public class FilterableOptionText : MonoBehaviour
         {
             var option = optionItem.Option;
             filteredText = option.Line.TextWithoutCharacterName.Text;
-            rawText = filteredText;
-
-            if (option.Line.Metadata != null)
-            {
-                var rawTag = option.Line.Metadata.FirstOrDefault(m => m.StartsWith("raw:"));
-                if (rawTag != null)
-                {
-                    rawText = rawTag.Substring("raw:".Length).Replace("_", " ");
-                }
-            }
+            rawText = PerceptionText.TryGetRaw(option.Line, out var alternate) ? alternate : filteredText;
 
             initialized = true;
 

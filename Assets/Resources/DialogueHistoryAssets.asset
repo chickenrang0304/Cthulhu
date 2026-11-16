@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bb8258f43247b69079916f78188a36, type: 3}
+  m_Name: DialogueHistoryAssets
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueHistoryAssets
+  historyIcon: {fileID: -6538737339212252443, guid: d0ba72f59b34268419ae124beafa23a4, type: 3}
+  settingsIcon: {fileID: 3891269495536304776, guid: 56f5e98a56e126446aa34a88c8c49327, type: 3}
+  playerPortrait: {fileID: 926854526465553346, guid: e2e8db22c233152468ac3af3be3ef0a9, type: 3}
+  otherPortrait: {fileID: -3156848321205102788, guid: b4332bbdb30b26f488a296628961b2b9, type: 3}
+  font: {fileID: 11400000, guid: 87c516507a6d3e7499c4e50b9ee7e340, type: 2}

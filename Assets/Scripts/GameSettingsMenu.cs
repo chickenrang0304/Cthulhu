@@ -37,7 +37,10 @@ public sealed class GameSettingsMenu : MonoBehaviour
     private Button windowedButton;
     private GameObject quitConfirmationRoot;
     private bool isOpen;
-    private float previousTimeScale = 1f;
+    public bool IsOpen => isOpen;
+
+    public void Open() => SetMenuOpen(true);
+    public void Close() => SetMenuOpen(false);
     private float nextAudioScanTime;
 
     private float MasterVolume { get; set; }
@@ -88,7 +91,7 @@ public sealed class GameSettingsMenu : MonoBehaviour
     private void OnDestroy()
     {
         UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
-        if (isOpen) Time.timeScale = previousTimeScale;
+        DialogueMenuPause.Release(this);
     }
 
     private void OnApplicationQuit()
@@ -100,7 +103,11 @@ public sealed class GameSettingsMenu : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (quitConfirmationRoot != null && quitConfirmationRoot.activeSelf)
+            if (DialogueHistoryUI.Instance != null && DialogueHistoryUI.Instance.IsOpen)
+            {
+                DialogueHistoryUI.Instance.Close();
+            }
+            else if (quitConfirmationRoot != null && quitConfirmationRoot.activeSelf)
             {
                 quitConfirmationRoot.SetActive(false);
             }
@@ -333,8 +340,8 @@ public sealed class GameSettingsMenu : MonoBehaviour
         if (open)
         {
             EnsureEventSystem();
-            previousTimeScale = Time.timeScale;
-            Time.timeScale = 0f;
+            DialogueMenuPause.Acquire(this);
+            DialogueHistoryUI.Instance?.Close();
             menuRoot.SetActive(true);
             masterSlider.SetValueWithoutNotify(MasterVolume);
             bgmSlider.SetValueWithoutNotify(BgmVolume);
@@ -346,7 +353,7 @@ public sealed class GameSettingsMenu : MonoBehaviour
         {
             if (quitConfirmationRoot != null) quitConfirmationRoot.SetActive(false);
             menuRoot.SetActive(false);
-            Time.timeScale = previousTimeScale;
+            DialogueMenuPause.Release(this);
             PlayerPrefs.Save();
         }
     }

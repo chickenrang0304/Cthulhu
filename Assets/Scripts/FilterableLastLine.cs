@@ -32,16 +32,7 @@ public class FilterableLastLine : MonoBehaviour
     public void CacheLine(LocalizedLine line)
     {
         filteredText = line.TextWithoutCharacterName.Text;
-        rawText = filteredText;
-
-        if (line.Metadata != null)
-        {
-            var rawTag = line.Metadata.FirstOrDefault(m => m.StartsWith("raw:"));
-            if (rawTag != null)
-            {
-                rawText = rawTag.Substring("raw:".Length).Replace("_", " ");
-            }
-        }
+        rawText = PerceptionText.TryGetRaw(line, out var alternate) ? alternate : filteredText;
 
         hasCachedText = true;
 

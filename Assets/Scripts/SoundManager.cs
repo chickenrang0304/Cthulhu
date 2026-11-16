@@ -27,10 +27,10 @@ public class SoundManager : MonoBehaviour
     {
         if (!isTrueForm)
         {
-            // 노말 BGM → 현재 위치에서 일시정지
+            // 현재 위치에서 일시정지
             normalBGM.Pause();
 
-            // 본모습 BGM → 멈춰있던 위치에서 재생
+            // 멈춰있던 위치에서 재생
             trueFormBGM.UnPause();
 
             // 본모습 BGM을 한 번도 재생한 적 없다면 처음부터 재생
@@ -43,10 +43,10 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            // 본모습 BGM → 현재 위치에서 일시정지
+            // 현재 위치에서 일시정지
             trueFormBGM.Pause();
 
-            // 노말 BGM → 멈춰있던 위치에서 재생
+            // 멈춰있던 위치에서 재생
             normalBGM.UnPause();
 
             isTrueForm = false;

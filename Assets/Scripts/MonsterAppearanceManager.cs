@@ -61,7 +61,7 @@ public class MonsterAppearanceController : MonoBehaviour
             return; // FilterManager가 아직 씬에 없으면 아무것도 안 함
         }
 
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        if (!DialogueMenuPause.IsBlockingInput && Keyboard.current != null && Keyboard.current.tabKey.wasPressedThisFrame)
         {
             FilterManager.Instance.ToggleFilter();
         }

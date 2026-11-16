@@ -12,6 +12,8 @@ public class FilterManager : MonoBehaviour
 
     public bool FilterOn { get; private set; } = true;
 
+    public event System.Action<bool> FilterChanged;
+
     [Header("필터 전환 플래시 효과")]
     [SerializeField] private Image flashImage; // 필터 On/Off 전환 시 깜빡일 UI 이미지 (화면 전체를 덮는 오버레이 등)
     [SerializeField] private float flashInDuration = 0.1f;  // 투명(0) -> 불투명(1)로 가는 데 걸리는 시간
@@ -48,6 +50,8 @@ public class FilterManager : MonoBehaviour
     {
         FilterOn = !FilterOn;
         dialogueRunner.VariableStorage.SetValue(VariableName, FilterOn);
+
+        FilterChanged?.Invoke(FilterOn);
 
         foreach (var tracker in FilterableOptionText.ActiveTrackers)
         {
